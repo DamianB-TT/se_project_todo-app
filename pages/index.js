@@ -10,6 +10,26 @@ const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 const todosList = document.querySelector(".todos__list");
 
+export const taskCounterEl = document.querySelector(".counter__text");
+export let taskCounterTotal = 0;
+export let taskCounterUncomplete = 0;
+
+export function incrementTotal() {
+  taskCounterTotal++;
+}
+
+export function decrementTotal() {
+  taskCounterTotal--;
+}
+
+export function incrementUncomplete() {
+  taskCounterUncomplete++;
+}
+
+export function decrementUncomplete() {
+  taskCounterUncomplete--;
+}
+
 const openModal = (modal) => {
   modal.classList.add("popup_visible");
 };
@@ -28,6 +48,8 @@ const generateTodo = (data) => {
 const addTodo = (item) => {
   const todo = generateTodo(item);
   todosList.append(todo);
+  taskCounterTotal++;
+  taskCounterEl.textContent = `Showing ${taskCounterUncomplete} out of ${taskCounterTotal} completed`;
 };
 
 addTodoButton.addEventListener("click", () => {

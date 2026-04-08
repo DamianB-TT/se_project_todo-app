@@ -1,5 +1,5 @@
 .header {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #1f2a44;
   display: flex;
   padding-bottom: 12px;
 }
@@ -13,7 +13,7 @@
   font-size: 20px;
   line-height: 1;
   letter-spacing: -0.2px;
-  color: #181818;
+  color: #e6edf7;
   max-width: 114px;
   margin: 0;
 }
@@ -22,7 +22,7 @@
   font-family: Inter, Arial, sans-serif;
   font-size: 40px;
   line-height: 1.2;
-  color: #181818;
+  color: #e6edf7;
   font-weight: 700;
   margin: 0;
 }
