@@ -1,13 +1,3 @@
-import {
-  taskCounterEl,
-  taskCounterTotal,
-  taskCounterUncomplete,
-  incrementTotal,
-  decrementTotal,
-  incrementUncomplete,
-  decrementUncomplete,
-} from "../pages/index.js";
-
 class Todo {
   constructor(data, selector) {
     this._data = data;
@@ -17,28 +7,10 @@ class Todo {
   _setEventListeners() {
     this._todoCheckboxEl.addEventListener("change", () => {
       this._data.completed = !this._data.completed;
-      if (this._data.completed == true) {
-        incrementUncomplete();
-      } else {
-        decrementUncomplete();
-      }
-      taskCounterEl.textContent = `Showing ${taskCounterUncomplete} out of ${taskCounterTotal} completed`;
     });
 
     this._todoDeleteBtn.addEventListener("click", () => {
-      this._todoElement.classList.add("todo--removing");
-      this._todoElement.addEventListener(
-        "animationend",
-        () => {
-          this._todoElement.remove();
-          decrementTotal();
-          if (this._data.completed == true) {
-            decrementUncomplete();
-          }
-          taskCounterEl.textContent = `Showing ${taskCounterUncomplete} out of ${taskCounterTotal} completed`;
-        },
-        { once: true },
-      );
+      this._todoElement.remove();
     });
   }
 
@@ -77,8 +49,6 @@ class Todo {
     this._generateCheckboxEl();
     this._setEventListeners();
     this._generateDate();
-
-    this._todoElement.classList.add("todo--new");
 
     return this._todoElement;
   }
