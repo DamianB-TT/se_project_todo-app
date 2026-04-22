@@ -14,9 +14,12 @@ class Todo {
     });
 
     this._todoDeleteBtn.addEventListener("click", () => {
-      this._todoElement.remove();
-      this._handleDelete(this._data.completed);
-      this._handleTotalDelete(true);
+      this._todoElement.classList.add("todo--removing");
+      this._todoElement.addEventListener("animationend", () => {
+        this._todoElement.remove();
+        this._handleDelete(this._data.completed);
+        this._handleTotalDelete(true);
+      });
     });
   }
 
@@ -55,6 +58,8 @@ class Todo {
     this._generateCheckboxEl();
     this._setEventListeners();
     this._generateDate();
+
+    this._todoElement.classList.add("todo--new");
 
     return this._todoElement;
   }

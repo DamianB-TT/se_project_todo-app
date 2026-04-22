@@ -1,18 +1,19 @@
 .page {
-  background-color: #f5f5f5;
+  background-color: #050a14;
   padding: 20px;
   min-height: 100vh;
 }
 
 .page__content {
-  background-color: #fff;
+  background-color: #0b1220;
   margin: 0 auto;
   max-width: 726px;
   min-height: 782px;
   box-sizing: border-box;
   border-radius: 16px;
-  box-shadow: 0px 4px 8px 0px #000000;
+  box-shadow: 0px 4px 8px 0px #1e3a8a;
   padding: 20px;
+  background: linear-gradient(145deg, #0b1220, #0a0f1c);
 }
 
 @media screen and (max-width: 1030px) {
